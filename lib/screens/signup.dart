@@ -11,8 +11,9 @@ class SignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.grey[800],
       appBar: AppBar(
+        backgroundColor: Colors.grey[900],
         title: Text(
           'SignUp',
           style: Theme.of(context)
@@ -30,18 +31,55 @@ class SignUp extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextFormField(
-                decoration: InputDecoration(hintText: 'Name'),
+                decoration: InputDecoration(
+                  hintText: 'Name',
+                  hintStyle: Theme.of(context)
+                      .textTheme
+                      .subtitle1
+                      .copyWith(color: Colors.grey),
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey),
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey),
+                  ),
+                ),
                 controller: nameController,
               ),
               TextFormField(
-                decoration: InputDecoration(hintText: 'Email'),
+                decoration: InputDecoration(
+                  hintText: 'Email',
+                  hintStyle: Theme.of(context)
+                      .textTheme
+                      .subtitle1
+                      .copyWith(color: Colors.grey),
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey),
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey),
+                  ),
+                ),
                 controller: emailController,
               ),
               TextFormField(
-                decoration: InputDecoration(hintText: 'Password'),
+                decoration: InputDecoration(
+                  hintText: 'Password',
+                  hintStyle: Theme.of(context)
+                      .textTheme
+                      .subtitle1
+                      .copyWith(color: Colors.grey),
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey),
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey),
+                  ),
+                ),
                 controller: passwordController,
                 obscureText: true,
               ),
+              SizedBox(height: 40),
               // ignore: deprecated_member_use
               RaisedButton(
                 onPressed: () {

@@ -16,9 +16,9 @@ class Root extends StatelessWidget {
       },
       builder: (_) {
         if (Get.find<AuthController>().user?.uid != null) {
-          return Home();
-        } else {
           return Login();
+        } else {
+          return Home();
         }
       },
     );

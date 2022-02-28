@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:todo_task_management/controllers/authController.dart';
 import 'package:todo_task_management/screens/signup.dart';
 
+// ignore: must_be_immutable
 class Login extends StatelessWidget {
   Login({Key key}) : super(key: key);
 
@@ -13,8 +14,9 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.grey[800],
       appBar: AppBar(
+        backgroundColor: Colors.grey[900],
         title: Text(
           'Login',
           style: Theme.of(context)
@@ -22,7 +24,7 @@ class Login extends StatelessWidget {
               .headline6
               .copyWith(color: Colors.white),
         ),
-        centerTitle: true,
+        // centerTitle: true,
       ),
       body: SafeArea(
           child: SizedBox.expand(
@@ -32,14 +34,39 @@ class Login extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextFormField(
-                decoration: InputDecoration(hintText: 'Email'),
+                decoration: InputDecoration(
+                  hintText: 'Email',
+                  hintStyle: Theme.of(context)
+                      .textTheme
+                      .subtitle1
+                      .copyWith(color: Colors.grey),
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey),
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey),
+                  ),
+                ),
                 controller: emailController,
               ),
               TextFormField(
-                decoration: InputDecoration(hintText: 'Password'),
+                decoration: InputDecoration(
+                  hintText: 'Password',
+                  hintStyle: Theme.of(context)
+                      .textTheme
+                      .subtitle1
+                      .copyWith(color: Colors.grey),
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey),
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey),
+                  ),
+                ),
                 controller: passwordController,
                 obscureText: true,
               ),
+              SizedBox(height: 40),
               // ignore: deprecated_member_use
               RaisedButton(
                 onPressed: () {
@@ -48,7 +75,7 @@ class Login extends StatelessWidget {
                 },
                 child: Text('Login'),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 40),
               TextButton(
                   onPressed: () {
                     Get.to(() => SignUp());

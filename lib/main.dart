@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
       ),
       initialBinding: AuthBinding(),
       home: Root(),
+      darkTheme: ThemeData.dark(),
     );
   }
 }
